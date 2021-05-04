@@ -1,0 +1,106 @@
+@import './_variables.scss';
+@import './_mixin.scss';
+
+html {
+    -ms-overflow-style: scrollbar; //Fix scrollbar transparent at ie10, ie11
+    -webkit-font-smoothing: antialiased; //Adding font smoothing for safari MAC OS
+}
+
+body {
+    font-size: 16px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: $FontRegular;
+    background: $color-white;
+    color: $color-grey;
+    &.body-hidden {
+        overflow: hidden;
+    }
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    &:focus, &:hover {
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+p {
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 0;
+    font-family: $FontRegular;
+    color: $color-text;
+    @include media-breakpoint-down(md) {
+        font-size: 14px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: $FontMedium;
+}
+
+textarea {
+    resize: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+label {
+    margin: 0;
+}
+
+.gutter {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        margin-left: 0;
+    }
+    > * {
+        padding-left: 15px;
+        padding-right: 15px;
+        @include media-breakpoint-down(sm) {
+            padding: 0;
+        }
+    }
+}
+
+.no-margin {
+    margin: 0;
+}
+
+input {
+    border-radius: 4px;
+    box-shadow: none;
+    border: 1px solid $color-border;
+}
+
+textarea:focus,
+input:focus {
+    outline: 0;
+}
